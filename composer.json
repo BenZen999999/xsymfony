@@ -86,7 +86,13 @@
             "@auto-scripts"
         ],
         "php:cs-fixer:fix": "php-cs-fixer fix",
-        "phpstan": "phpstan analyse"
+        "phpstan": "phpstan analyse",
+        "test-all": [
+            "composer test-unit",
+            "composer test-integration"
+        ],
+        "tu": "phpunit --testsuite Unit",
+        "ti": "phpunit --testsuite Integration"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -98,6 +104,7 @@
         }
     },
     "require-dev": {
+        "captainhook/captainhook": "^5.23",
         "friendsofphp/php-cs-fixer": "^3.59",
         "phpstan/phpstan": "^1.11",
         "phpunit/phpunit": "^9.5",
