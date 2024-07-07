@@ -22,9 +22,6 @@
                 "action": "\\CaptainHook\\App\\Hook\\PHP\\Action\\Linting"
             },
             {
-                "action": "composer test-all"
-            },
-            {
                 "action": "composer php:cs-fixer:fix"
             }
         ]
