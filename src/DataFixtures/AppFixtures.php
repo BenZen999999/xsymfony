@@ -1,15 +1,15 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace App\DataFixtures;
 
-use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Persistence\ObjectManager;
 use App\Entity\Ingredient;
 use App\Entity\NutritionalValue;
 use App\Entity\Recipe;
 use App\Entity\RecipeIngredient;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {

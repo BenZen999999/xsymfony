@@ -1,0 +1,14 @@
+{# templates/recipe/edit_ingredient.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Zutat bearbeiten{% endblock %}
+
+{% block body %}
+    <h1>Zutat bearbeiten</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.ingredient) }}
+    {{ form_row(form.quantity) }}
+    <button class="btn">Speichern</button>
+    {{ form_end(form) }}
+{% endblock %}

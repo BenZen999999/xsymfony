@@ -16,7 +16,21 @@
     <h2>Zutaten</h2>
     <ul>
         {% for ingredient in recipe.recipeIngredients %}
-            <li>{{ ingredient.quantity }} {{ ingredient.ingredient.nutritionalValue.unit }} {{ ingredient.ingredient.name }}</li>
+            <li>
+                {{ ingredient.quantity }} {{ ingredient.ingredient.nutritionalValue.unit }} {{ ingredient.ingredient.name }}
+                <a href="{{ path('recipe_ingredient_edit', {id: recipe.id, ingredientId: ingredient.id}) }}">Edit</a>
+                <form method="post" action="{{ path('recipe_ingredient_delete', {id: recipe.id, ingredientId: ingredient.id}) }}" style="display:inline;">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ingredient.id) }}">
+                    <button class="btn">Delete</button>
+                </form>
+            </li>
         {% endfor %}
     </ul>
+
+    <h2>Neue Zutat hinzufügen</h2>
+    {{ form_start(form) }}
+    {{ form_row(form.ingredient) }}
+    {{ form_row(form.quantity) }}
+    <button class="btn">Hinzufügen</button>
+    {{ form_end(form) }}
 {% endblock %}

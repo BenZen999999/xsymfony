@@ -45,4 +45,12 @@ class Recipe
     {
         return $this->recipeIngredients;
     }
+
+    public function addRecipeIngredient(RecipeIngredient $recipeIngredient1): self
+    {
+        $this->recipeIngredients[] = $recipeIngredient1;
+
+        return $this;
+    }
+
 }

@@ -45,4 +45,19 @@ class RecipeIngredient
     {
         return $this->quantity;
     }
+
+    public function setIngredient(Ingredient $ingredient): self
+    {
+        $this->ingredient = $ingredient;
+
+        return $this;
+    }
+
+    public function setQuantity(float $quantity): self
+    {
+        $this->quantity = $quantity;
+
+        return $this;
+    }
+
 }
