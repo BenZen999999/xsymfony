@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rezept: {{ recipe.name }}{% endblock %}
+
+{% block body %}
+    <h1>{{ recipe.name }}</h1>
+
+    <h2>Nährwerte</h2>
+    <ul>
+        <li>Kalorien: {{ nutritionalValues.calories }}</li>
+        <li>Protein: {{ nutritionalValues.protein }}g</li>
+        <li>Fett: {{ nutritionalValues.fat }}g</li>
+        <li>Kohlenhydrate: {{ nutritionalValues.carbohydrates }}g</li>
+    </ul>
+
+    <h2>Zutaten</h2>
+    <ul>
+        {% for ingredient in recipe.recipeIngredients %}
+            <li>{{ ingredient.quantity }} {{ ingredient.ingredient.nutritionalValue.unit }} {{ ingredient.ingredient.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

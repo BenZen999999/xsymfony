@@ -17,16 +17,4 @@ class RecipeRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Recipe::class);
     }
-
-    public function save(Recipe $recipe): void
-    {
-        $this->_em->persist($recipe);
-        $this->_em->flush();
-    }
-
-    public function remove(Recipe $recipe): void
-    {
-        $this->_em->remove($recipe);
-        $this->_em->flush();
-    }
 }
